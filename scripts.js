@@ -4,7 +4,7 @@ d3.csv("https://raw.githubusercontent.com/daveywb/electionmap/master/election-he
 
 		// Set the size and margins of the svg
 		var margin = {top: 10, right: 10, bottom: 10, left: 10},
-			width = 770 - margin.left - margin.right,
+			width = 780 - margin.left - margin.right,
 			height = 983 - margin.top - margin.bottom;
 
 		// Create the svg and attach to #map
@@ -16,7 +16,7 @@ d3.csv("https://raw.githubusercontent.com/daveywb/electionmap/master/election-he
 				.append("g")
 				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-		// Create the positions of the circles		
+		// Create the positions of the circles
 			var electionmap = svg
 				.selectAll("g")
 				.data(data)
@@ -120,7 +120,7 @@ d3.csv("https://raw.githubusercontent.com/daveywb/electionmap/master/election-he
 			 }
 										return returnColor;
                       })
-						//Tooltips					
+						//Tooltips
 						.on("mouseover", function(d) {
 
 							var tooltipString = '';
