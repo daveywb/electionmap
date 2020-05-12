@@ -79,7 +79,12 @@ $query = $conn->query("SELECT * FROM `words`");
 $row_count = $query->num_rows;
 echo $row_count;
 
-if($row_count >= 25){
+$query = $conn->query("SELECT game_value FROM `general` WHERE game_key = 'players'");
+// Count number of rows
+$numberplayers = $query;
+
+
+if($row_count >= (5 * $numberplayers)){
               //start Game
 
             // Make php array of all the words in the DB

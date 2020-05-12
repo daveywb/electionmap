@@ -1,0 +1,11 @@
+TODO
+
+- once users have input their names, keep a record of who each user is using session so they don't need to enter names again but they can enter cards again once it's reset
+
+- Admin page:
+-- Number of users playing
+-- Reset the cards
+-- Reset the whole game - Start new game
+
+- functionality
+-- unused card gets returned 

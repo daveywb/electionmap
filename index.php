@@ -20,6 +20,11 @@
 <body>
 <?php
 include('connect.php');
+
+$query = $conn->query("SELECT game_value FROM `general` WHERE game_key = 'players'");
+// Count number of rows
+$numberplayers = $query;
+
 ?>
 
 <?php
@@ -159,7 +164,7 @@ include('connect.php');
                 //     console.log(typeof data);
 
 
-                    if(data === '5'){
+                    if(data === '<?php echo $numberplayers; ?>'){
 
                       //show button to get a card
                       $('.screen3').hide();
