@@ -20,17 +20,17 @@ if(!empty($_POST['players'])){
   $sql = "TRUNCATE TABLE users;";
 
   if (mysqli_query($conn, $sql)) {
-   echo "Record deleted successfully";
+  // echo "Record deleted successfully";
   } else {
-   echo "Error deleting record: " . mysqli_error($conn);
+   //echo "Error deleting record: " . mysqli_error($conn);
   }
   // --cards are all deleted
   $sql = "TRUNCATE TABLE words;";
 
   if (mysqli_query($conn, $sql)) {
-   echo "Record deleted successfully";
+   //echo "Record deleted successfully";
   } else {
-   echo "Error deleting record: " . mysqli_error($conn);
+   //echo "Error deleting record: " . mysqli_error($conn);
   }
 
   // -- number of players is updated
@@ -47,14 +47,14 @@ if(!empty($_POST['players'])){
 
 
 
-  $query = $conn->query("SELECT game_value FROM `general` WHERE game_key = 'players'");
-  // Count number of rows
-  $numberplayers = $query;
-
-  $conn->close();
-
 }
 
+//Get number of players
+$query = $conn->query("SELECT game_value FROM `general` WHERE game_key = 'players'");
+
+$numberplayers = mysqli_fetch_assoc($query)['game_value'];
+
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -21,9 +21,11 @@
 <?php
 include('connect.php');
 
+//Get number of players
 $query = $conn->query("SELECT game_value FROM `general` WHERE game_key = 'players'");
-// Count number of rows
-$numberplayers = $query;
+
+$numberplayers = mysqli_fetch_assoc($query)['game_value'];
+
 
 ?>
 

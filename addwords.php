@@ -79,9 +79,11 @@ $query = $conn->query("SELECT * FROM `words`");
 $row_count = $query->num_rows;
 echo $row_count;
 
+//Get number of players
 $query = $conn->query("SELECT game_value FROM `general` WHERE game_key = 'players'");
-// Count number of rows
-$numberplayers = $query;
+
+$numberplayers = mysqli_fetch_assoc($query)['game_value'];
+
 
 
 if($row_count >= (5 * $numberplayers)){
